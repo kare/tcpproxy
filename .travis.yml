@@ -1,0 +1,6 @@
+language: go
+go_import_path: kkn.fi/cmd/tcpproxy
+script: go build
+go:
+    - 1.8.1
+    - tip

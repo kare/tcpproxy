@@ -1,5 +1,7 @@
 # TCP Proxy
 
+[![Build Status](https://travis-ci.org/kare/tcpproxy.svg?branch=master)](https://travis-ci.org/kare/tcpproxy)
+
 ## Install
 
 ```sh
