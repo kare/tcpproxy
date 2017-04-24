@@ -9,8 +9,10 @@ import (
 	"log"
 	"net"
 	"os"
+	"os/signal"
 	"path"
 	"sync"
+	"syscall"
 )
 
 func usage() {
@@ -25,6 +27,14 @@ func main() {
 		usage()
 		os.Exit(2)
 	}
+
+	ch := make(chan os.Signal)
+	signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM)
+	go func() {
+		log.Print(<-ch)
+		os.Exit(2)
+	}()
+
 	laddr := os.Args[1]
 	raddr := os.Args[2]
 	serve(laddr, raddr)
