@@ -39,14 +39,14 @@ func serve(laddr, raddr string) {
 		local, err := proxy.Accept()
 		if err != nil {
 			log.Print(err)
-			continue
+			os.Exit(1)
 		}
 		go func(local net.Conn) {
 			remote, err := net.Dial("tcp", raddr)
 			if err != nil {
 				log.Print(err)
 				if err := local.Close(); err != nil {
-					log.Println(err)
+					log.Print(err)
 				}
 				return
 			}
@@ -56,10 +56,10 @@ func serve(laddr, raddr string) {
 			go xfer(remote, local, &wg)
 			wg.Wait()
 			if err := remote.Close(); err != nil {
-				log.Println(err)
+				log.Print(err)
 			}
 			if err := local.Close(); err != nil {
-				log.Println(err)
+				log.Print(err)
 			}
 		}(local)
 	}
