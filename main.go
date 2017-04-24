@@ -39,7 +39,7 @@ func serve(laddr, raddr string) {
 		local, err := proxy.Accept()
 		if err != nil {
 			log.Print(err)
-			os.Exit(1)
+			os.Exit(2)
 		}
 		go func(local net.Conn) {
 			remote, err := net.Dial("tcp", raddr)
