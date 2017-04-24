@@ -14,19 +14,19 @@ import (
 )
 
 func usage() {
-	fmt.Fprintf(os.Stderr, "usage: %v sourceport host port\n", path.Base(os.Args[0]))
+	fmt.Fprintf(os.Stderr, "usage: %v local:port remote:port\n", path.Base(os.Args[0]))
 }
 
 func main() {
 	log.SetFlags(0)
 	log.SetPrefix("tcpproxy: ")
 	flag.Usage = usage
-	if len(os.Args) != 4 {
+	if len(os.Args) != 3 {
 		usage()
 		os.Exit(2)
 	}
-	laddr := net.JoinHostPort("", os.Args[1])
-	raddr := net.JoinHostPort(os.Args[2], os.Args[3])
+	laddr := os.Args[1]
+	raddr := os.Args[2]
 	serve(laddr, raddr)
 }
 
