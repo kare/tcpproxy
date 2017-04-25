@@ -3,7 +3,6 @@ package main // import "kkn.fi/cmd/tcpproxy"
 // http://pub.gajendra.net/src/trampoline.c
 
 import (
-	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -15,16 +14,11 @@ import (
 	"syscall"
 )
 
-func usage() {
-	fmt.Fprintf(os.Stderr, "usage: %v local:port remote:port\n", path.Base(os.Args[0]))
-}
-
 func main() {
 	log.SetFlags(0)
 	log.SetPrefix("tcpproxy: ")
-	flag.Usage = usage
 	if len(os.Args) != 3 {
-		usage()
+		fmt.Fprintf(os.Stderr, "usage: %v local:port remote:port\n", path.Base(os.Args[0]))
 		os.Exit(2)
 	}
 
