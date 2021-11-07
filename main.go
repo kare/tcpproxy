@@ -1,4 +1,4 @@
-package main // import "kkn.fi/cmd/tcpproxy"
+package main
 
 // http://pub.gajendra.net/src/trampoline.c
 
