@@ -1,0 +1,13 @@
+---
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ci:
+    uses: kare/github/.github/workflows/go-pkg-ci.yaml@d14e40cde5ccdebb8b1237571acb09cea0fca42e
