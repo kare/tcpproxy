@@ -22,7 +22,7 @@ func main() {
 		os.Exit(2)
 	}
 
-	ch := make(chan os.Signal)
+	ch := make(chan os.Signal, 100)
 	signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM)
 	go func() {
 		log.Print(<-ch)
