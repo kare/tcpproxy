@@ -15,4 +15,4 @@ defaults:
     shell: bash
 jobs:
   ci:
-    uses: kare/github/.github/workflows/go-pkg-ci.yaml@d14e40cde5ccdebb8b1237571acb09cea0fca42e
+    uses: kare/github/.github/workflows/go-pkg-ci.yaml@v0.1.0
