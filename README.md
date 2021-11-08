@@ -1,6 +1,5 @@
 # TCP Proxy
-
-[![Build Status](https://travis-ci.org/kare/tcpproxy.svg?branch=master)](https://travis-ci.org/kare/tcpproxy)
+[![CI](https://github.com/kare/tcpproxy/actions/workflows/ci.yaml/badge.svg)](https://github.com/kare/tcpproxy/actions/workflows/ci.yaml)
 
 ## Install
 
