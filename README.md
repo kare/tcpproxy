@@ -4,7 +4,7 @@
 ## Install
 
 ```sh
-% go get kkn.fi/cmd/tcpproxy
+% go install kkn.fi/cmd/tcpproxy
 ```
 
 ## Usage
