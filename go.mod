@@ -1,3 +1,3 @@
 module kkn.fi/cmd/tcpproxy
 
-go 1.17
+go 1.24

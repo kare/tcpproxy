@@ -7,12 +7,9 @@ on:
   pull_request:
     branches:
       - main
-concurrency:
-  group: ci-${{ github.head_ref }}
-  cancel-in-progress: true
-defaults:
-  run:
-    shell: bash
 jobs:
   ci:
-    uses: kare/github/.github/workflows/go-pkg-ci.yaml@v0.2.0
+    uses: kare/github/.github/workflows/go-pkg-ci.yaml@main
+    with:
+      staticcheckversion: 2025.1.1
+
